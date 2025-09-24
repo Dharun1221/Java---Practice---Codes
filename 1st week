@@ -13,6 +13,23 @@ Input :
 7
 Output :
 Odd
+
+SOLUTION:
+
+import java.util.Scanner;
+
+public class EvenOdd {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        if(num % 2 == 0)
+            System.out.println("Even");
+        else
+            System.out.println("Odd");
+        sc.close();
+    }
+}
+
 ****************************************************************************************
 Q2. Positive / Negative (Easy)
 Write a program to check whether a number is Positive, Negative, or Zero.
@@ -34,6 +51,24 @@ Input :
 Output :
 Zero
 
+SOLUTION:
+
+import java.util.Scanner;
+
+public class PosNegZero {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        if(num > 0)
+            System.out.println("Positive");
+        else if(num < 0)
+            System.out.println("Negative");
+        else
+            System.out.println("Zero");
+        sc.close();
+    }
+}
+
 ****************************************************************************************
 Q3. Divisible by 3 and 5 (Easy)
 Check whether the given number is divisible by both 3 and 5.
@@ -51,6 +86,22 @@ Input :
 Output :
 No
 
+SOLUTION:
+
+import java.util.Scanner;
+
+public class DivisibleBy3And5 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        if(num % 3 == 0 && num % 5 == 0)
+            System.out.println("Yes");
+        else
+            System.out.println("No");
+        sc.close();
+    }
+}
+
 ****************************************************************************************
 Q4. Convert Days into Years, Months, Days (Medium)
 Convert the given number of days into completed years, months, and remaining days. Assume 1
@@ -66,6 +117,25 @@ Output :
 Years: 1
 Months: 1
 Days: 5
+
+SOLUTION:
+
+import java.util.Scanner;
+
+public class DaysConversion {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int days = sc.nextInt();
+        int years = days / 365;
+        days %= 365;
+        int months = days / 30;
+        days %= 30;
+        System.out.println("Years: " + years);
+        System.out.println("Months: " + months);
+        System.out.println("Days: " + days);
+        sc.close();
+    }
+}
 
 ****************************************************************************************
 Q5. Mileage Remuneration Calculator (Medium)
@@ -86,6 +156,24 @@ Input :
 Output :
 305.40 7635.00
 
+SOLUTION:
+
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class MileageCalculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double start = sc.nextDouble();
+        double end = sc.nextDouble();
+        double distance = end - start;
+        double remuneration = distance * 25;
+        DecimalFormat df = new DecimalFormat("0.00");
+        System.out.println(df.format(distance) + " " + df.format(remuneration));
+        sc.close();
+    }
+}
+
 ****************************************************************************************
 Q6. Max & Min of 2 Numbers (Easy)
 Find the maximum and minimum of two numbers.
@@ -103,6 +191,22 @@ Input :
 Output :
 Max=12 Min=7
 
+SOLUTION:
+
+import java.util.Scanner;
+
+public class MaxMin2 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int max = Math.max(a, b);
+        int min = Math.min(a, b);
+        System.out.println("Max=" + max + " Min=" + min);
+        sc.close();
+    }
+}
+
 ****************************************************************************************
 Q7. Max of 3 Numbers (Easy)
 Find the maximum of three numbers.
@@ -119,6 +223,22 @@ Input :
 12 45 23
 Output :
 45
+
+SOLUTION:
+
+import java.util.Scanner;
+
+public class Max3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        int max = Math.max(a, Math.max(b, c));
+        System.out.println(max);
+        sc.close();
+    }
+}
 
 ****************************************************************************************
 Q8. Positive, Negative or Zero (Easy)
@@ -142,6 +262,24 @@ Input :
 Output :
 0 is zero
 
+SOLUTION:
+
+import java.util.Scanner;
+
+public class PosNegZeroMessage {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        if(num > 0)
+            System.out.println(num + " is positive");
+        else if(num < 0)
+            System.out.println(num + " is negative");
+        else
+            System.out.println(num + " is zero");
+        sc.close();
+    }
+}
+
 ****************************************************************************************
 Q9. Customer Grouping (Medium)
 Customers are grouped according to age and gender.
@@ -163,6 +301,30 @@ Input :
 1
 Output :
 Group 1
+
+SOLUTION:
+
+import java.util.Scanner;
+
+public class CustomerGrouping {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int age = sc.nextInt();
+        int gender = sc.nextInt();
+        if(gender == 1) {
+            if(age < 25) System.out.println("Group 1");
+            else if(age <= 45) System.out.println("Group 3");
+            else System.out.println("Group 5");
+        } else if(gender == 2) {
+            if(age < 25) System.out.println("Group 2");
+            else if(age <= 45) System.out.println("Group 4");
+            else System.out.println("Group 5");
+        } else {
+            System.out.println("Invalid");
+        }
+        sc.close();
+    }
+}
 
 ****************************************************************************************
 Q10. SBI Credit Card Eligibility (Hard)
@@ -194,6 +356,33 @@ Input :
 Output :
 No. You are not eligible for SBI credit cards
 
+SOLUTION:
+
+import java.util.Scanner;
+
+public class SBICreditCardEligibility {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int primaryAge = sc.nextInt();
+        int addOnAge = sc.nextInt();
+        int empType = sc.nextInt();
+        int income = sc.nextInt();
+        
+        boolean eligible = true;
+        if(primaryAge < 21 || primaryAge > 60) eligible = false;
+        if(addOnAge <= 18) eligible = false;
+        if(empType < 1 || empType > 4) eligible = false;
+        if(income > 300000) eligible = false;
+        
+        if(eligible)
+            System.out.println("Yes. You are eligible for SBI credit cards");
+        else
+            System.out.println("No. You are not eligible for SBI credit cards");
+        
+        sc.close();
+    }
+}
+
 ****************************************************************************************
 Q11. Triangle Shape (Easy)
 Check whether a triangle is Equilateral, Isosceles, or Scalene.
@@ -221,6 +410,26 @@ Input :
 Output :
 Isosceles Triangle
 
+SOLUTION:
+
+import java.util.Scanner;
+
+public class TriangleType {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        if(a == b && b == c)
+            System.out.println("Equilateral Triangle");
+        else if(a == b || b == c || a == c)
+            System.out.println("Isosceles Triangle");
+        else
+            System.out.println("Scalene Triangle");
+        sc.close();
+    }
+}
+
 ****************************************************************************************
 Q12. Descending Order of 4 Numbers (Easy)
 Arrange four numbers in descending order.
@@ -233,6 +442,23 @@ Input :
 5 8 2 9
 Output :
 9 8 5 2
+
+SOLUTION:
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class DescendingOrder {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Integer[] nums = new Integer[4];
+        for(int i=0; i<4; i++) nums[i] = sc.nextInt();
+        Arrays.sort(nums, Collections.reverseOrder());
+        for(int n : nums) System.out.print(n + " ");
+        sc.close();
+    }
+}
 
 ****************************************************************************************
 Q13. Character Type (Easy)
@@ -255,6 +481,24 @@ Input :
 Output :
 special
 
+SOLUTION:
+
+import java.util.Scanner;
+
+public class CharType {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        char ch = sc.next().charAt(0);
+        if(Character.isLetter(ch))
+            System.out.println("alphabet");
+        else if(Character.isDigit(ch))
+            System.out.println("digit");
+        else
+            System.out.println("special");
+        sc.close();
+    }
+}
+
 ****************************************************************************************
 Q14. Even Numbers in Range (Easy)
 Display even numbers between a given range inclusive of both start and end.
@@ -267,6 +511,22 @@ Input :
 1 10
 Output :
 2 4 6 8 10
+
+SOLUTION:
+
+import java.util.Scanner;
+
+public class EvenNumbersInRange {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int start = sc.nextInt();
+        int end = sc.nextInt();
+        for(int i=start; i<=end; i++){
+            if(i%2==0) System.out.print(i + " ");
+        }
+        sc.close();
+    }
+}
 
 ****************************************************************************************
 Q15. Sum of Even Numbers (Easy)
@@ -285,6 +545,21 @@ Input :
 Output :
 12
 
+SOLUTION:
+
+import java.util.Scanner;
+
+public class SumEven {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sum = 0;
+        for(int i=2; i<=n; i+=2) sum += i;
+        System.out.println(sum);
+        sc.close();
+    }
+}
+
 ****************************************************************************************
 Q16. Sum of Odd and Even Numbers (Medium)
 Find the sum of odd and even numbers from 1 to N.
@@ -301,6 +576,24 @@ Input :
 15
 Output :
 64 56
+
+SOLUTION:
+
+import java.util.Scanner;
+
+public class SumOddEven {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sumOdd = 0, sumEven = 0;
+        for(int i=1;i<=n;i++){
+            if(i%2==0) sumEven+=i;
+            else sumOdd+=i;
+        }
+        System.out.println(sumOdd + " " + sumEven);
+        sc.close();
+    }
+}
 
 ****************************************************************************************
 Q17. Factorial (Medium)
@@ -319,6 +612,25 @@ Input :
 Output :
 Error! Factorial of a negative number doesn't exist.
 
+SOLUTION:
+
+import java.util.Scanner;
+
+public class Factorial {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if(n<0){
+            System.out.println("Error! Factorial of a negative number doesn't exist.");
+        } else {
+            long fact = 1;
+            for(int i=1;i<=n;i++) fact *= i;
+            System.out.println(fact);
+        }
+        sc.close();
+    }
+}
+
 ****************************************************************************************
 Q18. Print Digits Right to Left (Easy)
 Print digits of a given number from right to left.
@@ -331,6 +643,22 @@ Input :
 1234
 Output :
 4 3 2 1
+
+SOLUTION:
+
+import java.util.Scanner;
+
+public class DigitsRightToLeft {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        while(n>0){
+            System.out.print(n%10 + " ");
+            n/=10;
+        }
+        sc.close();
+    }
+}
 
 ****************************************************************************************
 Q19. Sum of Numbers Divisible by 3 or 5 (Medium)
@@ -345,6 +673,24 @@ Input :
 Output :
 33
 
+SOLUTION:
+
+import java.util.Scanner;
+
+public class SumDiv3or5 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int start = sc.nextInt();
+        int end = sc.nextInt();
+        int sum = 0;
+        for(int i=start;i<=end;i++){
+            if(i%3==0 || i%5==0) sum+=i;
+        }
+        System.out.println(sum);
+        sc.close();
+    }
+}
+
 ****************************************************************************************
 Q20. Count Digits (Easy)
 Count the number of digits in a number.
@@ -357,6 +703,25 @@ Input :
 98765
 Output :
 5
+
+SOLUTION:
+
+import java.util.Scanner;
+
+public class CountDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int count = 0;
+        if(n==0) count = 1;
+        while(n>0){
+            count++;
+            n/=10;
+        }
+        System.out.println(count);
+        sc.close();
+    }
+}
 
 ****************************************************************************************
 Q21. Sum of Digits (Easy)
@@ -374,6 +739,24 @@ Input :
 405
 Output :
 9
+
+SOLUTION:
+
+import java.util.Scanner;
+
+public class SumDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sum = 0;
+        while(n>0){
+            sum += n%10;
+            n/=10;
+        }
+        System.out.println(sum);
+        sc.close();
+    }
+}
 
 ****************************************************************************************
 Q22. Harshad Number (Medium)
@@ -393,6 +776,25 @@ Input :
 Output :
 Not Harshad Number
 
+SOLUTION:
+
+import java.util.Scanner;
+
+public class HarshadNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sum = 0, temp = n;
+        while(temp>0){
+            sum += temp%10;
+            temp/=10;
+        }
+        if(n%sum==0) System.out.println("Harshad Number");
+        else System.out.println("Not Harshad Number");
+        sc.close();
+    }
+}
+
 ****************************************************************************************
 Q23. Perfect Number (Medium)
 Check whether a number is a Perfect Number.
@@ -411,6 +813,24 @@ Input :
 Output :
 Not Perfect Number
 
+SOLUTION:
+
+import java.util.Scanner;
+
+public class PerfectNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sum = 0;
+        for(int i=1;i<n;i++){
+            if(n%i==0) sum+=i;
+        }
+        if(sum==n) System.out.println("Perfect Number");
+        else System.out.println("Not Perfect Number");
+        sc.close();
+    }
+}
+
 ****************************************************************************************
 Q24. Prime Number (Easy)
 Check whether a number is Prime.
@@ -428,6 +848,27 @@ Input :
 Output :
 Not Prime
 
+SOLUTION:
+
+import java.util.Scanner;
+
+public class PrimeNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if(n<=1) {
+            System.out.println("Not Prime");
+        } else {
+            boolean isPrime = true;
+            for(int i=2;i*i<=n;i++){
+                if(n%i==0) {isPrime=false; break;}
+            }
+            System.out.println(isPrime ? "Prime" : "Not Prime");
+        }
+        sc.close();
+    }
+}
+
 ****************************************************************************************
 Q25. Perfect Square (Easy)
 Check whether a number is a Perfect Square.
@@ -444,6 +885,21 @@ Input :
 20
 Output :
 Not Perfect Square
+
+SOLUTION:
+
+import java.util.Scanner;
+
+public class PerfectSquare {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sqrt = (int)Math.sqrt(n);
+        if(sqrt*sqrt==n) System.out.println("Perfect Square");
+        else System.out.println("Not Perfect Square");
+        sc.close();
+    }
+}
 
 ****************************************************************************************
 Q26. Fibonacci Series (Easy)
@@ -465,3 +921,31 @@ Output :
 Baby: 2
 Attending school: 3
 Adult: 10
+
+SOLUTION:
+
+import java.util.Scanner;
+
+public class FibonacciSeries {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int a=0, b=1;
+        for(int i=0;i<n;i++){
+            System.out.print(a + " ");
+            int next = a+b;
+            a=b;
+            b=next;
+        }
+        sc.close();
+    }
+}
+
+******************************************************************************************
+
+
+
+
+
+
+
